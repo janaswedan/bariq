@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BARIQ — Jewelry</title>
+  <meta name="description" content="Minimal luxury jewelry store — rings, bracelets, necklaces, earrings." />
+
+  <!-- Fonts: elegant + clean -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Top Announcement -->
+  <div class="announce">
+    <div class="container announce__inner">
+      <span>✨ قطع جديدة وصلت — تسوّقي الآن</span>
+      <span class="dot">•</span>
+      <span>طلب سريع عبر واتساب</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="#home" aria-label="BARIQ home">
+        <span class="brand__name">BARIQ</span>
+        <span class="brand__tag">EVERY DAY SHINE</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#shop">تسوق</a>
+        <a href="#categories">الفئات</a>
+        <a href="#featured">مميز</a>
+        <a href="#story">قصتنا</a>
+        <a href="#contact">تواصل</a>
+      </nav>
+
+      <div class="header__actions">
+        <button class="iconbtn" id="openSearch" aria-label="بحث">بحث</button>
+        <button class="iconbtn iconbtn--solid" id="openCart" aria-label="السلة">
+          السلة <span class="badge" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO (Webflow-like: big image + clean copy) -->
+  <main id="home" class="hero">
+    <div class="container hero__grid">
+      <div class="hero__content">
+        <p class="kicker">MINIMAL • LUXURY • DAILY</p>
+        <h1 class="display">
+          مجوهرات بسيطة… <span class="accent">تعمل فرق</span>
+        </h1>
+        <p class="lead">
+          قطع مختارة بعناية بألوان محايدة، تناسب كل يوم وكل طلعة.
+        </p>
+
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="#featured">تسوّقي المميز</a>
+          <a class="btn" href="#shop">كل المنتجات</a>
+        </div>
+
+        <div class="hero__mini">
+          <div class="miniCard">
+            <span class="miniCard__label">توصيل</span>
+            <b class="miniCard__value">حسب المنطقة</b>
+          </div>
+          <div class="miniCard">
+            <span class="miniCard__label">طلب</span>
+            <b class="miniCard__value">واتساب سريع</b>
+          </div>
+          <div class="miniCard">
+            <span class="miniCard__label">ستايل</span>
+            <b class="miniCard__value">Old Money</b>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__media" aria-hidden="true">
+        <div class="hero__img hero__img--big"></div>
+        <div class="hero__img hero__img--small"></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Categories (Shop by Category) -->
+  <section id="categories" class="section">
+    <div class="container section__head">
+      <h2 class="title">تسوقي حسب الفئة</h2>
+      <p class="muted">اختاري الفئة — بعدها بتشوفي المنتجات تحت تلقائيًا.</p>
+    </div>
+
+    <div class="container catGrid" id="categoryGrid">
+      <!-- injected by JS -->
+    </div>
+  </section>
+
+  <!-- Featured Products (Webflow style grid) -->
+  <section id="featured" class="section section--alt">
+    <div class="container section__head">
+      <h2 class="title">منتجات مميزة</h2>
+      <p class="muted">أفضل اختياراتنا — صور كبيرة، تفاصيل نظيفة، فخامة.</p>
+    </div>
+
+    <div class="container productGrid" id="featuredGrid">
+      <!-- injected by JS -->
+    </div>
+  </section>
+
+  <!-- Shop / Products -->
+  <section id="shop" class="section">
+    <div class="container section__head">
+      <h2 class="title">Shop</h2>
+      <p class="muted">ابحثي، فلتر، وأضيفي للسلة.</p>
+    </div>
+
+    <div class="container tools">
+      <div class="chips" id="chips"></div>
+
+      <div class="tools__right">
+        <input class="input" id="searchBox" placeholder="ابحثي عن منتج… (مثال: خاتم)" />
+        <button class="btn btn--ghost" id="sortBtn">ترتيب حسب السعر</button>
+        <button class="btn btn--ghost" id="clearBtn">مسح</button>
+      </div>
+    </div>
+
+    <div class="container productGrid" id="productsGrid"></div>
+  </section>
+
+  <!-- Story (clean editorial layout) -->
+  <section id="story" class="section section--alt">
+    <div class="container story">
+      <div class="story__text">
+        <h2 class="title">قصتنا</h2>
+        <p class="muted">
+          بريق = لمعة راقية. نختار قطع تحسّها فخمة بدون ما تكون “مبالغ فيها”.
+          كل قطعة معمول إلها تنسيق بسيط—عشان تلبسيها كل يوم.
+        </p>
+
+        <ul class="list">
+          <li>✅ ألوان محايدة (بيج/ذهبي/باستيل)</li>
+          <li>✅ صور نظيفة وجودة عالية</li>
+          <li>✅ طلب سريع عبر واتساب</li>
+        </ul>
+
+        <a class="btn btn--primary" href="#contact">تواصلي للطلب</a>
+      </div>
+
+      <div class="story__media" aria-hidden="true">
+        <div class="story__img"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="section">
+    <div class="container newsletter">
+      <div>
+        <h3 class="newsletter__title">اشتركي لتوصلك الجديد ✨</h3>
+        <p class="muted">بدون إزعاج—بس عروض/وصولات جديدة.</p>
+      </div>
+
+      <form class="newsletter__form" onsubmit="event.preventDefault(); alert('تم! ✨');">
+        <input class="input" type="email" placeholder="إيميلك" required />
+        <button class="btn btn--primary" type="submit">اشتراك</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Contact / Footer -->
+  <footer id="contact" class="footer">
+    <div class="container footer__grid">
+      <div>
+        <div class="brand brand--footer">
+          <span class="brand__name">BARIQ</span>
+          <span class="brand__tag">EVERY DAY SHINE</span>
+        </div>
+        <p class="muted">طلبك خلال ثواني عبر واتساب.</p>
+        <button class="btn btn--primary" id="whatsFloating">اطلبي واتساب</button>
+      </div>
+
+      <div>
+        <h4 class="footer__title">روابط</h4>
+        <a class="footer__link" href="#shop">Shop</a>
+        <a class="footer__link" href="#featured">Featured</a>
+        <a class="footer__link" href="#story">Story</a>
+      </div>
+
+      <div>
+        <h4 class="footer__title">إنستغرام</h4>
+        <a class="footer__link" href="https://instagram.com/bariq_by_jana_.1" target="_blank" rel="noopener">
+          @bariq_by_jana_.1
+        </a>
+        <p class="muted tiny">عدّلي هذا الرابط إذا بدك.</p>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <span class="muted">© <span id="year"></span> BARIQ</span>
+      <span class="muted">Designed in a minimal luxury style</span>
+    </div>
+  </footer>
+
+  <!-- Search Modal -->
+  <div class="modal" id="searchModal" aria-hidden="true">
+    <div class="modal__backdrop" data-close="search"></div>
+    <div class="modal__panel" role="dialog" aria-modal="true" aria-label="بحث">
+      <div class="modal__head">
+        <h3>بحث</h3>
+        <button class="iconbtn" data-close="search" aria-label="إغلاق">إغلاق</button>
+      </div>
+      <input id="modalSearchInput" class="input" placeholder="اكتبي اسم المنتج…" />
+      <p class="muted tiny">النتائج تتحدث فورًا.</p>
+    </div>
+  </div>
+
+  <!-- Cart Drawer -->
+  <aside class="drawer" id="cartDrawer" aria-hidden="true">
+    <div class="drawer__backdrop" data-close="cart"></div>
+    <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="سلة المشتريات">
+      <div class="drawer__head">
+        <h3>سلة المشتريات</h3>
+        <button class="iconbtn" data-close="cart" aria-label="إغلاق">إغلاق</button>
+      </div>
+
+      <div class="cart" id="cartItems"></div>
+
+      <div class="drawer__footer">
+        <div class="total">
+          <span>المجموع</span>
+          <b id="cartTotal">₪0</b>
+        </div>
+        <button class="btn btn--primary" id="checkoutBtn">اطلبي عبر واتساب</button>
+        <button class="btn btn--ghost" id="clearCartBtn">تفريغ السلة</button>
+      </div>
+    </div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
